@@ -1,3 +1,3 @@
 == Pathfinder Character Kit
 
-This application is a character generator and interactive character sheet for use during a pathfinder campaign. Currently in production, this app will be up and running soon.
+This application is a character generator and interactive character sheet for a players convenience during a pathfinder campaign. Currently in production, this app will be up and running soon.
