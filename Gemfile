@@ -14,6 +14,17 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+end
+
+group :development, :test do
+  gem 'ffaker'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
 group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
