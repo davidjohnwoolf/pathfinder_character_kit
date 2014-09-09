@@ -8,10 +8,14 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <%= link_to('Home', root_path) %>
+  <%= link_to('Characters', characters_path) %>
+  <%= link_to('Generate Character', new_character_path) %>
 
-<%= yield %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
 
 </body>
 </html>
