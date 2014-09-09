@@ -15,7 +15,7 @@ class CharactersController < ApplicationController
   def create
     @character = Character.new(character_params)
     if @character.save
-      redirect_to character_path
+      redirect_to characters_path
     else
       render :new
     end
@@ -26,7 +26,8 @@ class CharactersController < ApplicationController
   end
 
   def update
-    if @character.update_attribute(character_params)
+    @character = Character.find(params[:id])
+    if @character.update_attributes(character_params)
       redirect_to character_path(@character.id)
     else
       render :edit
