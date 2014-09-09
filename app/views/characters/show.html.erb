@@ -1,6 +1,17 @@
 <h1><%= @character.name %></h1>
 
-<h4>Alignment:</h4><span><%= @character.alignment %></span>
-<h4>Deity:</h4><span><%= @character.deity %></span>
-<h4>Age:</h4><span><%= @character.age %></span>
-<h4>Gender:</h4><span><%= @character.gender %></span>
+<%= link_to("Edit #{@character.name}", edit_character_path(@character.id)) %>
+<br>
+<%= link_to("Delete #{@character.name}", character_path(@character.id), method: :delete, data: {confirm: "Are you sure?"}) %>
+
+<h4>Alignment</h4>
+<p><%= @character.alignment %></p>
+
+<h4>Deity</h4>
+<p><%= @character.deity %></p>
+
+<h4>Age</h4>
+<p><%= @character.age %></p>
+
+<h4>Gender</h4>
+<p><%= @character.gender %></p>
