@@ -1,0 +1,84 @@
+<h1>Generate New Character</h1>
+
+<%= form_for @character do |f| %>
+
+  <% if @character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@character.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :alignment %>
+    <br>
+    <%= f.text_field :alignment %>
+  </div>
+
+  <div>
+    <%= f.label :deity %>
+    <br>
+    <%= f.text_field :deity %>
+  </div>
+
+  <div>
+    <%= f.label :size %>
+    <br>
+    <%= f.text_field :size %>
+  </div>
+
+  <div>
+    <%= f.label :gender %>
+    <br>
+    <%= f.text_field :gender %>
+  </div>
+
+  <div>
+    <%= f.label :age %>
+    <br>
+    <%= f.text_field :age %>
+  </div>
+
+  <div>
+    <%= f.label :height %>
+    <br>
+    <%= f.text_field :height %>
+  </div>
+
+  <div>
+    <%= f.label :weight %>
+    <br>
+    <%= f.text_field :weight %>
+  </div>
+
+  <div>
+    <%= f.label :skin %>
+    <br>
+    <%= f.text_field :skin %>
+  </div>
+
+  <div>
+    <%= f.label :hair %>
+    <br>
+    <%= f.text_field :hair %>
+  </div>
+
+  <div>
+    <%= f.label :eyes %>
+    <br>
+    <%= f.text_field :eyes %>
+  </div>
+
+  <%= f.submit('Generate Character') %>
+
+<% end %>
