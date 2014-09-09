@@ -1,11 +1,12 @@
 class CharactersController < ApplicationController
 
+  before_action :find_character, only[:show, :edit, :update, :destroy]
+
   def index
     @characters = Character.all
   end
 
   def show
-    @character = Character.find(params[:id])
   end
 
   def new
@@ -22,11 +23,9 @@ class CharactersController < ApplicationController
   end
 
   def edit
-    @character = Character.find(params[:id])
   end
 
   def update
-    @character = Character.find(params[:id])
     if @character.update_attributes(character_params)
       redirect_to character_path(@character.id)
     else
@@ -40,6 +39,10 @@ class CharactersController < ApplicationController
   end
 
   private
+
+  def find_character
+    @character = Character.find(params[:id])
+  end
 
   def character_params
     params.require(:character).permit(:name, :alignment, :deity, :size, :gender, :age, :height, :weight, :skin, :hair, :eyes)
