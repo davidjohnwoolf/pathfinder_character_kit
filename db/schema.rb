@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140909223347) do
   enable_extension "plpgsql"
 
   create_table "characters", force: true do |t|
+    t.integer  "user_id",    null: false
     t.string   "name",       null: false
     t.string   "alignment"
     t.string   "deity"
