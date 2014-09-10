@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-
+  before_action :authenticate_user!
   before_action :find_character, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -15,6 +15,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    @character.user_id = current_user.id
     if @character.save
       redirect_to characters_path
     else
