@@ -36,7 +36,7 @@ class CharactersController < ApplicationController
 
   def destroy
     @character.destroy
-    redirect_to characters_path
+    redirect_to characters_url
   end
 
   private
