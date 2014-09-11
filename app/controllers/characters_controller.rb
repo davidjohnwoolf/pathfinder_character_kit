@@ -47,7 +47,7 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :alignment, :deity, :size, :gender, :age, :height, :weight, :skin, :hair, :eyes, weapons_attributes: [:name, :description])
+    params.require(:character).permit(:name, :alignment, weapons_attributes: [:name, :description])
   end
 
 end

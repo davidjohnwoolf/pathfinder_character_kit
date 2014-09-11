@@ -7,15 +7,6 @@
 <h4>Alignment</h4>
 <p><%= @character.alignment %></p>
 
-<h4>Deity</h4>
-<p><%= @character.deity %></p>
-
-<h4>Age</h4>
-<p><%= @character.age %></p>
-
-<h4>Gender</h4>
-<p><%= @character.gender %></p>
-
 <h4>Weapon</h4>
 <p>
   <%= @character.weapons[0].name %>
@@ -23,8 +14,3 @@
 <p>
   <%= @character.weapons[0].description %>
 </p>
-<p>
-  <%= @character.weapons[0].character_id %>
-</p>
-
-<h2><%= @character.user_id %></h2>
