@@ -2,8 +2,7 @@ class CreateWeapons < ActiveRecord::Migration
   def change
     create_table :weapons do |t|
       t.belongs_to :character
-      t.integer :character_id
-      t.string :name
+      t.string :name, null: false
       t.text :description
       t.string :weapon_class
       t.integer :cost
