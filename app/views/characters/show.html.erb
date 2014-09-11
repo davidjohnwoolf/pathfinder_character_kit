@@ -16,4 +16,15 @@
 <h4>Gender</h4>
 <p><%= @character.gender %></p>
 
+<h4>Weapon</h4>
+<p>
+  <%= @character.weapons[0].name %>
+</p>
+<p>
+  <%= @character.weapons[0].description %>
+</p>
+<p>
+  <%= @character.weapons[0].character_id %>
+</p>
+
 <h2><%= @character.user_id %></h2>
