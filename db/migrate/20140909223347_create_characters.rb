@@ -2,7 +2,6 @@ class CreateCharacters < ActiveRecord::Migration
   def change
     create_table :characters do |t|
       t.belongs_to :user
-      t.integer :user_id, null: false
       t.string :name, null: false
       t.string :alignment
       t.string :deity
