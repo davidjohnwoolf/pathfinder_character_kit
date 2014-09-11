@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140910231218) do
 
   create_table "weapons", force: true do |t|
     t.integer  "character_id"
-    t.string   "name",          null: false
+    t.string   "name"
     t.text     "description"
     t.string   "weapon_class"
     t.integer  "cost"
