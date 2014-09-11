@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20140910231218) do
   enable_extension "plpgsql"
 
   create_table "characters", force: true do |t|
-    t.integer  "user_id",    null: false
+    t.integer  "user_id"
     t.string   "name",       null: false
     t.string   "alignment"
     t.string   "deity"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140910231218) do
 
   create_table "weapons", force: true do |t|
     t.integer  "character_id"
-    t.string   "name"
+    t.string   "name",          null: false
     t.text     "description"
     t.string   "weapon_class"
     t.integer  "cost"
