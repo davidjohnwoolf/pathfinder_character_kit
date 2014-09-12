@@ -1,4 +1,4 @@
-<%= form_for @character do |f| %>
+<%= nested_form_for @character do |f| %>
 
   <% if @character.errors.any? %>
     <div id="error_explanation">
@@ -25,7 +25,10 @@
 
   <h2>Weapon</h2>
 
+  <p><%= f.link_to_add "Add a weapon", :weapons %></p>
+
   <%= f.fields_for :weapons do |weapon_f| %>
+    <%= weapon_f.link_to_remove 'Delete Weapon' %>
     <div>
       <%= weapon_f.label :name, 'Weapon Name' %>
       <br>
