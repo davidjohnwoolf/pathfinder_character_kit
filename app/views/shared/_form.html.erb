@@ -20,24 +20,26 @@
   <div>
     <%= f.label :alignment %>
     <br>
-    <%= f.text_field :alignment %>
+    <%= f.select :alignment, [ 'Neutral', 'Good', 'Evil' ] %>
   </div>
 
   <h2>Weapon</h2>
 
-  <p><%= f.link_to_add "Add a weapon", :weapons %></p>
+  <div><%= f.link_to_add "Add a weapon", :weapons %></div>
 
-  <%= f.fields_for :weapons do |weapon_f| %>
-    <%= weapon_f.link_to_remove 'Delete Weapon' %>
+  <%= f.fields_for :weapons do |weapon_form| %>
     <div>
-      <%= weapon_f.label :name, 'Weapon Name' %>
-      <br>
-      <%= weapon_f.text_field :name %>
+      <%= weapon_form.link_to_remove 'Delete Weapon' %>
     </div>
     <div>
-      <%= weapon_f.label :description, 'Weapon Description' %>
+      <%= weapon_form.label :name, 'Weapon Name' %>
       <br>
-      <%= weapon_f.text_area :description %>
+      <%= weapon_form.text_field :name %>
+    </div>
+    <div>
+      <%= weapon_form.label :description, 'Weapon Description' %>
+      <br>
+      <%= weapon_form.text_area :description %>
     </div>
   <% end %>
 
