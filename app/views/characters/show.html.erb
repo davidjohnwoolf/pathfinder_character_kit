@@ -7,10 +7,14 @@
 <h4>Alignment</h4>
 <p><%= @character.alignment %></p>
 
-<h4>Weapon</h4>
-<p>
-  <%= @character.weapons[0].name %>
-</p>
-<p>
-  <%= @character.weapons[0].description %>
-</p>
+<% @character.weapons.each do |weapon| %>
+
+  <h4>Weapon</h4>
+  <p>
+    <%= weapon.name %>
+  </p>
+  <p>
+    <%= weapon.description %>
+  </p>
+
+<% end %>
