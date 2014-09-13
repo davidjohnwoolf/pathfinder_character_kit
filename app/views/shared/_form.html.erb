@@ -23,9 +23,31 @@
     <%= f.select :alignment, [ 'Neutral', 'Good', 'Evil' ] %>
   </div>
 
-  <h2>Weapon</h2>
+  <h2>Skills</h2>
 
-  <div><%= f.link_to_add "Add a weapon", :weapons %></div>
+  <%= f.fields_for :skills do |skills_form| %>
+    <div>
+      <%= skills_form.link_to_remove 'Delete Skill' %>
+    </div>
+    <div>
+      <%= skills_form.label :name, 'Skill' %>
+      <br>
+      <%= skills_form.text_field :name %>
+    </div>
+    <div>
+      <%= skills_form.label :rank %>
+      <br>
+      <%= skills_form.number_field :rank %>
+    </div>
+    <div>
+      <%= skills_form.label :class_skill %>
+      <br>
+      <%= skills_form.check_box :class_skill %>
+    </div>
+  <% end %>
+  <div><%= f.link_to_add "Add a skill", :skills %></div>
+
+  <h2>Weapon</h2>
 
   <%= f.fields_for :weapons do |weapon_form| %>
     <div>
@@ -42,6 +64,9 @@
       <%= weapon_form.text_area :description %>
     </div>
   <% end %>
+  <div><%= f.link_to_add "Add a weapon", :weapons %></div>
+  <br>
+  <br>
 
   <%= f.submit('Generate Character') %>
 
