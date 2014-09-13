@@ -11,6 +11,7 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    @character.skills.build
     @character.weapons.build
   end
 
@@ -47,7 +48,7 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :alignment, weapons_attributes: [:name, :description, :id, :_destroy])
+    params.require(:character).permit(:name, :alignment, weapons_attributes: [:name, :description, :id, :_destroy], skills_attributes: [:name, :rank, :class_skill, :id, :_destroy])
   end
 
 end
