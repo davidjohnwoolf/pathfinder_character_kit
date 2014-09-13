@@ -27,7 +27,7 @@ RSpec.describe CharactersController, :type => :controller do
     end
   end
 
-  describe '#show', focus: true do
+  describe '#show' do
     before do
       @user = create(:user)
       @character = create(:character, name: 'David', user: @user)
