@@ -7,6 +7,24 @@
 <h4>Alignment</h4>
 <p><%= @character.alignment %></p>
 
+<h2>Skills</h2>
+
+<% @character.skills.each do |skill| %>
+  <h4>Skill</h4>
+  <p>
+    <%= skill.name %>
+  </p>
+  <p>
+    <%= skill.rank %>
+  </p>
+  <p>
+    <%= skill.class_skill %>
+  </p>
+
+<% end %>
+
+<h2>Weapons</h2>
+
 <% @character.weapons.each do |weapon| %>
 
   <h4>Weapon</h4>
