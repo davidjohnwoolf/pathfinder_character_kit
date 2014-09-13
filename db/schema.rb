@@ -25,14 +25,10 @@ ActiveRecord::Schema.define(version: 20140913080124) do
   end
 
   create_table "skills", force: true do |t|
+    t.integer  "character_id"
     t.string   "name"
-    t.integer  "total"
     t.integer  "rank"
-    t.integer  "ability_mod"
-    t.integer  "special_mod"
     t.boolean  "class_skill"
-    t.boolean  "trained"
-    t.boolean  "armor_penalty"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
